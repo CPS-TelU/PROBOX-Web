@@ -2,7 +2,7 @@ import React from "react";
 const HeroFeatures = () => {
   return (
     <div className="hero py-20 bg-base-100">
-      <div className="hero-content flex-col lg:flex-row-reverse ">
+<div className="hero-content flex-col lg:flex-row-reverse align-right">
         <img src="/Boxtes.png" className="max-w-4xl " />
         <div>
           <div>
@@ -11,6 +11,7 @@ const HeroFeatures = () => {
                 Protection
               </h1>
               <h1 className=" font-jakarta text-5xl font-bold px-2.5">
+                {" "}
                 is our
               </h1>
             </div>
@@ -43,7 +44,7 @@ const HeroFeatures = () => {
                 Put the items you want to store inside
               </li>
               <li className="font-jakarta text-sm py-1 font-medium">
-                Close the box and it will automatically locked
+                Close the box and it will automatically locked.
               </li>
             </div>
           </div>
