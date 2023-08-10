@@ -11,7 +11,6 @@ const HeroFeatures = () => {
                 Protection
               </h1>
               <h1 className=" font-jakarta text-5xl font-bold px-2.5">
-                {" "}
                 is our
               </h1>
             </div>
@@ -34,7 +33,6 @@ const HeroFeatures = () => {
               <h1 className=" font-jakarta text-5xl font-bold">How does it</h1>
             </div>
             <h1 className="font-jakarta text-5xl font-extrabold text-primary">
-              {" "}
               Work?
             </h1>
             <div className="">
@@ -42,7 +40,7 @@ const HeroFeatures = () => {
                 Open the box using RFID card by tapping it
               </li>
               <li className="font-jakarta text-sm py-1 font-medium">
-                Put the items you want to store inside{" "}
+                Put the items you want to store inside
               </li>
               <li className="font-jakarta text-sm py-1 font-medium">
                 Close the box and it will automatically locked
