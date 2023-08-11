@@ -20,7 +20,7 @@ const FormLogin = () => {
           <h2 className="card-title font-jakarta font-extrabold text-[30px] text-primary">account </h2>
           <p className="font-jakarta my-3 text-[15px]">Put it, Leave it  </p>
           <div className="card-actions justify-end my-3">
-            <button className="btn bg-base-200">
+            <button onClick={() => navigate("/Dashboard")} className="btn bg-base-200">
             <img src="/google.png" alt="" className="w-5 h-5"/>Sign in with google</button>
           </div>
         </div>

@@ -1,13 +1,13 @@
 import React from "react";
-import {useNavigate} from 'react-router-dom'
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="navbar bg-base-100">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+      <div className="navbar-start sm: flex flex-row">
+        <div className="dropdown ">
+          <label tabIndex={0} className="btn btn-ghost sm:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -25,40 +25,58 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-              <a onClick ={() => navigate ("/")} className="font-jakarta font-medium">HOME</a>
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+          >
+            <li className="font-jakarta font-medium py-1 ">
+              <NavLink to={"/"}>HOME</NavLink>
             </li>
-            <li>
-              <a onClick ={() => navigate ("/Features")} className="font-jakarta font-medium">FEATURES</a>
+            <li className="font-jakarta font-medium py-1">
+              <NavLink to={"/Features"}>FEATURES</NavLink>
             </li>
-            <li>
-              <a onClick ={() => navigate ("/Features")} className="font-jakarta font-medium">OUR TEAM</a>
+            <li className="font-jakarta font-medium py-1">
+              <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
+            </li>
+            <li className="font-jakarta font-medium py-1">
+              <NavLink to={"/Login"}>SIGN IN</NavLink>
             </li>
           </ul>
         </div>
-        <div className="flex flex-wrap">
-        <img src="/Logo.png" alt="Logo" className="w-26 h-16"/>
-        <a className=" font-jakarta font-extrabold text-[25px] my-3 text-primary tracking-[.15em]">PROBOX</a>
+        <div className="flex flex-wrap ">
+          <div className="sm: flex flex-row mx-10">
+          <img src="/Logo.png" alt="Logo" className="w-26 h-16 " />
+          <a className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
+            PROBOX
+          </a>
+          </div>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li className="font-jakarta font-Bo">
-            <a onClick ={() => navigate ("/")}>HOME</a>
+      <div className="navbar-center hidden sm:flex">
+        <ul className="menu menu-horizontal">
+          <li className="font-jakarta font-medium px-2">
+            {/* <a onClick ={() => navigate ("/")}>HOME</a> */}
+            <NavLink to={"/"}>HOME</NavLink>
           </li>
-          <li className="font-jakarta font-medium">
-            <a onClick ={() => navigate ("/Features")}>FEATURES</a>
+          <li className="font-jakarta font-medium px-2">
+            {/* <a onClick={() => navigate("/Features")}>FEATURES</a> */}
+            <NavLink to={"/Features"}>FEATURES</NavLink>
           </li>
-          <li className="font-jakarta font-medium">
-            <a>OUR TEAM</a>
+          <li className="font-jakarta font-medium px-2">
+            {/* <a onClick={() => navigate("/OurTeams")}>OUR TEAMS</a> */}
+            <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-      <button onClick ={() => navigate ("/Login")}className="btn btn-primary text-white">SIGN IN</button>
+        <div className="hidden sm:flex">
+        <button
+          onClick={() => navigate("/Login")}
+          className="btn btn-primary text-white"
+        >
+          SIGN IN
+        </button>
+        </div>
       </div>
     </div>
   );
 };
-export default Navbar;
+export default Navbar;

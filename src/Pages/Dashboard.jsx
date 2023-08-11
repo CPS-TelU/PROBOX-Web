@@ -4,7 +4,6 @@ import HeroDashboard from "../Components/HeroDashboard";
 const Dashboard = ()=>{
     return(
         <div>
-            <Navbar />
             <HeroDashboard/> 
         </div>
     )
