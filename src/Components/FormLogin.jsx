@@ -1,8 +1,11 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
+
 const FormLogin = () => {
+  const navigate = useNavigate()
   return (
     <div>
-      <div className="flex flex-wrap justify-center py-36">
+      <div onClick ={() => navigate ("/")} className="flex flex-wrap justify-center py-36 hover:cursor-pointer">
         <img src="/Logo.png" alt="Logo" className="w-26 h-16" />
         <a className=" font-jakarta font-extrabold text-[25px] my-3 text-primary tracking-[.15em]">
           PROBOX
@@ -20,4 +23,4 @@ const FormLogin = () => {
     </div>
   );
 };
-export default FormLogin;
+export default FormLogin;

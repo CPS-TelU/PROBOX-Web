@@ -1,6 +1,8 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
 
 const Navbar = () => {
+  const navigate = useNavigate()
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -25,13 +27,13 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a className="font-jakarta font-medium">HOME</a>
+              <a onClick ={() => navigate ("/")} className="font-jakarta font-medium">HOME</a>
             </li>
             <li>
-              <a className="font-jakarta font-medium">FEATURES</a>
+              <a onClick ={() => navigate ("/Features")} className="font-jakarta font-medium">FEATURES</a>
             </li>
             <li>
-              <a className="font-jakarta font-medium">OUR TEAM</a>
+              <a onClick ={() => navigate ("/Features")} className="font-jakarta font-medium">OUR TEAM</a>
             </li>
           </ul>
         </div>
@@ -43,10 +45,10 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li className="font-jakarta font-Bo">
-            <a>HOME</a>
+            <a onClick ={() => navigate ("/")}>HOME</a>
           </li>
           <li className="font-jakarta font-medium">
-            <a>FEATURES</a>
+            <a onClick ={() => navigate ("/Features")}>FEATURES</a>
           </li>
           <li className="font-jakarta font-medium">
             <a>OUR TEAM</a>
@@ -54,9 +56,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-      <button className="btn btn-primary text-white">SIGN IN</button>
+      <button onClick ={() => navigate ("/Login")}className="btn btn-primary text-white">SIGN IN</button>
       </div>
     </div>
   );
 };
-export default Navbar;
+export default Navbar;
