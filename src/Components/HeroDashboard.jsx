@@ -61,7 +61,7 @@ const HeroDashboard = () => {
         <div className="mt-4 sm:mt-0 sm:ml-auto">
           <button
             onClick={() => navigate("/")}
-            className="btn btn-primary sm:self-center lg:self-start"
+            className="btn  bg-primary hover:bg-primary text-white sm:self-center lg:self-start"
           >
             SIGN OUT
           </button>

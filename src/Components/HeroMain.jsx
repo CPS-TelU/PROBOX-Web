@@ -19,7 +19,7 @@ const HeroMain = () => {
           <p className="py-2 text-sm lg:text-md my-4">
           Probox is an advanced and technologically equipped container designed to enhance security measures for protecting valuable items, documents, or possessions. This innovative device integrates cutting-edge technology to provide comprehensive security features, ensuring that its contents remain safeguarded from unauthorized access, theft, and tampering.
           </p>
-          <button onClick ={() => navigate ("/Features")} className="btn btn-primary ">Get Started</button>
+          <button onClick ={() => navigate ("/Features")} className="btn btn-primary text-white ">Get Started</button>
         </div>
       </div>
     </div>
