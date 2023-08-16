@@ -46,7 +46,10 @@ const FormLogin = () => {
                 <img src="/google.png" alt="" className="w-5 h-5" />
                 Sign in with Google
               </button>
-            )}
+            )} 
+          </div>
+          <div>
+          <p onClick={() => navigate("/")} className="font-jakarta underline text-sm font-light hover:cursor-pointer">Go Back</p>
           </div>
         </div>
       </div>

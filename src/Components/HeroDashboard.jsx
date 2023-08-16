@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BoxItem = ({ boxId, uid, timestamps }) => (
+const BoxItem = ({ boxId, uid, timestamps, isAvailable }) => (
   <div className="w-full p-4">
-    <div className="card bg-primary text-primary-content">
+    <div className="card bg-primary text-primary-content relative">
+      {isAvailable ? (
+        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-green-500 font-bold">
+          AVAILABLE
+        </div>
+      ) : (
+        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-red-500 font-bold">
+          UNAVAILABLE
+        </div>
+      )}
       <div className="card-body">
         <p className="font-bold text-lg">BOX ID: {boxId}</p>
         <p>UID: {uid}</p>
+
         {timestamps.map((timestamp, index) => (
           <p key={index}>{timestamp}</p>
         ))}
@@ -14,6 +24,55 @@ const BoxItem = ({ boxId, uid, timestamps }) => (
     </div>
   </div>
 );
+
+const BoxItems = ({ boxes }) => {
+  const [currentBox, setCurrentBox] = useState(0);
+
+  const handleNext = () => {
+    setCurrentBox((prevBox) => (prevBox + 1) % boxes.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentBox((prevBox) => (prevBox - 1 + boxes.length) % boxes.length);
+  };
+
+  return (
+    <div className="flex flex-col items-center">
+      <div className="w-64 carousel rounded-box relative ms-14 space-x-8">
+        {boxes.map((box, index) => (
+          <div
+            key={index}
+            className={`carousel-item w-full  ${
+              index === currentBox ? "active" : ""
+            }`}
+          >
+            <div className="card bg-primary text-primary-content">
+              <div className="card-body">
+                <p className="font-bold text-lg">BOX ID: {box.boxId}</p>
+                <p>UID: {box.uid}</p>
+                {box.timestamps.map((timestamp, idx) => (
+                  <p key={idx}>{timestamp}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+        <button
+          className="carousel-control prev"
+          onClick={handlePrev}
+        >
+          &#10094;
+        </button>
+        <button
+          className="carousel-control next"
+          onClick={handleNext}
+        >
+          &#10095;
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const HeroDashboard = () => {
   const boxes = [
@@ -45,6 +104,7 @@ const HeroDashboard = () => {
       lastUsed: ["14/08/2023 - 14.24"],
     },
   ];
+
   const navigate = useNavigate();
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,19 +150,23 @@ const HeroDashboard = () => {
       <div className="flex flex-col sm:flex-row mt-10 items-center justify-center">
         <h2 className="font-medium text-lg text-center">HISTORY</h2>
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-        {boxes.map((box) => (
-          <BoxItem
-            key={box.boxId}
-            boxId={box.boxId}
-            uid={box.uid}
-            timestamps={box.timestamps}
-          />
-        ))}
+      <div className="hidden sm:block">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          {boxes.map((box) => (
+            <BoxItem
+              key={box.boxId}
+              boxId={box.boxId}
+              uid={box.uid}
+              timestamps={box.timestamps}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="lg:hidden">
+        <BoxItems boxes={boxes} />
       </div>
     </div>
   );
 };
 
-export default HeroDashboard;
+export default HeroDashboard;

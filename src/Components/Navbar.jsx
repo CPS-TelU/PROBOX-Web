@@ -23,10 +23,10 @@ const Navbar = () => {
   }, [theme]);
 
   return (
-    <div className="navbar  bg-base-100">
+    <div className="navbar bg-base-100">
       <div className="navbar-start sm: flex flex-row">
         <div className="dropdown ">
-          <label tabIndex={0} className="btn btn-ghost sm:hidden">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -61,7 +61,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex flex-wrap ">
-          <div className="sm: flex flex-row mx-10">
+          <div className="hidden lg:flex flex-row mx-10">
             <img src="/Logo.png" alt="Logo" className="w-26 h-16 " />
             <a className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
               PROBOX
@@ -69,25 +69,34 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="navbar-center hidden sm:flex">
-        <ul className="menu menu-horizontal">
-          <li className="font-jakarta font-medium px-2">
-            {/* <a onClick ={() => navigate ("/")}>HOME</a> */}
-            <NavLink to={"/"}>HOME</NavLink>
-          </li>
-          <li className="font-jakarta font-medium px-2">
-            {/* <a onClick={() => navigate("/Features")}>FEATURES</a> */}
-            <NavLink to={"/Features"}>FEATURES</NavLink>
-          </li>
-          <li className="font-jakarta font-medium px-2">
-            {/* <a onClick={() => navigate("/OurTeams")}>OUR TEAMS</a> */}
-            <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
-          </li>
-        </ul>
+      <div className="navbar-center">
+        <div className="hidden lg:flex">
+          <ul className="menu menu-horizontal">
+            <li className="font-jakarta font-medium px-2">
+              {/* <a onClick ={() => navigate ("/")}>HOME</a> */}
+              <NavLink to={"/"}>HOME</NavLink>
+            </li>
+            <li className="font-jakarta font-medium px-2">
+              {/* <a onClick={() => navigate("/Features")}>FEATURES</a> */}
+              <NavLink to={"/Features"}>FEATURES</NavLink>
+            </li>
+            <li className="font-jakarta font-medium px-2">
+              {/* <a onClick={() => navigate("/OurTeams")}>OUR TEAMS</a> */}
+              <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-nowrap">
+          <div className="flex items-center lg:hidden">
+            <img src="/Logo.png" alt="Logo" className="w-26 h-16 " />
+            <a className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
+              PROBOX
+            </a>
+          </div>
+        </div>
       </div>
       <div className="navbar-end">
-        
-        <label className="swap swap-rotate pe-10">
+        <label className="swap swap-rotate sm:pe-8">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
@@ -107,18 +116,18 @@ const Navbar = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-off fill-current w-9 h-9"
+            className="swap-off fill-current w-9"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-        
-        <div className="hidden  pe-10 sm:flex">
+
+        <div className="hidden  pe-10 lg:flex justify-end">
           <button
             onClick={() => navigate("/Login")}
-            className="btn btn-primary text-white"
+            className="btn btn-primary hover:bg-primary text-white"
           >
             SIGN IN
           </button>
@@ -127,4 +136,4 @@ const Navbar = () => {
     </div>
   );
 };
-export default Navbar;
+export default Navbar;
