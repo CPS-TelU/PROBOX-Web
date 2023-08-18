@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { auth } from "./firebaseConfig"; // Make sure to import the auth object
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+  const [user, setUser] = useState(null); // Initialize user state
 
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -15,12 +16,27 @@ const Navbar = () => {
       setTheme("light");
     }
   };
+
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
-    // add custom data-theme attribute to html tag required to update theme using DaisyUI
     document.querySelector("html").setAttribute("data-theme", localTheme);
+
+    // Check if user is authenticated
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user); // Set the user state
+    });
+
+    return () => unsubscribe(); // Cleanup the subscription
   }, [theme]);
+
+  const handleSignInClick = () => {
+    if (user) {
+      navigate("/Dashboard");
+    } else {
+      navigate("/Login");
+    }
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -56,7 +72,11 @@ const Navbar = () => {
               <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
             </li>
             <li className="font-jakarta font-medium py-1">
-              <NavLink to={"/Login"}>SIGN IN</NavLink>
+              <li
+                onClick={handleSignInClick}
+              >
+                {user ? "GO TO DASHBOARD" : "SIGN IN"}
+              </li>
             </li>
           </ul>
         </div>
@@ -124,16 +144,16 @@ const Navbar = () => {
           </svg>
         </label>
 
-        <div className="hidden  pe-10 lg:flex justify-end">
+        <div className="hidden pe-10 lg:flex justify-end">
           <button
-            onClick={() => navigate("/Login")}
+            onClick={handleSignInClick}
             className="btn btn-primary hover:bg-primary text-white"
           >
-            SIGN IN
+            {user ? "GO TO DASHBOARD" : "SIGN IN"}
           </button>
         </div>
       </div>
     </div>
   );
 };
-export default Navbar;
+export default Navbar;

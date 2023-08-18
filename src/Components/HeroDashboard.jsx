@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { auth } from "./firebaseConfig"; // Make sure to import the auth object
 
 const BoxItem = ({ boxId, uid, timestamps, isAvailable }) => (
   <div className="w-full p-4">
@@ -105,6 +106,13 @@ const HeroDashboard = () => {
     },
   ];
 
+  const handleLogout = () => {
+    // Sign out the user
+    auth.signOut().then(() => {
+      navigate("/"); // Navigate to Home after sign out
+    });
+  };
+  
   const navigate = useNavigate();
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,9 +127,9 @@ const HeroDashboard = () => {
           </a>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-auto">
-          <button
-            onClick={() => navigate("/")}
-            className="btn  bg-primary hover:bg-primary text-white sm:self-center lg:self-start"
+        <button
+            onClick={handleLogout} // Call handleLogout on sign-out button click
+            className="btn bg-primary hover:bg-primary text-white sm:self-center lg:self-start"
           >
             SIGN OUT
           </button>
