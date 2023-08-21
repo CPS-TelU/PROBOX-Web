@@ -77,22 +77,11 @@ const Navbar = () => {
               <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
             </li>
             <li className="font-jakarta font-medium py-1">
-              <div>
-                {user ? (
-                  <li onClick={handleLogout} > SIGN OUT </li>
-                ) : (
-                  <li onClick={handleSignInClick} >  SIGN IN</li>
-                )}
-              </div>
-            </li>
-            <li className="font-jakarta font-medium py-1">
-              <div>
-                {user ? (
-                  <li onClick={handleLogout} > SIGN OUT </li>
-                ) : (
-                  <li onClick={handleSignInClick} >  SIGN IN</li>
-                )}
-              </div>
+              {user ? (
+                <p onClick={handleLogout}> SIGN OUT </p>
+              ) : (
+                <p onClick={handleSignInClick}> SIGN IN</p>
+              )}
             </li>
           </ul>
         </div>
@@ -162,9 +151,21 @@ const Navbar = () => {
 
         <div className="hidden pe-10 lg:flex justify-end">
           {user ? (
-            <button onClick={handleLogout} className="btn btn-primary hover:bg-primary text-white" > SIGN OUT </button>
+            <button
+              onClick={handleLogout}
+              className="btn btn-primary hover:bg-primary text-white"
+            >
+              {" "}
+              SIGN OUT{" "}
+            </button>
           ) : (
-            <button onClick={handleSignInClick} className="btn btn-primary hover:bg-primary text-white"> SIGN IN</button>
+            <button
+              onClick={handleSignInClick}
+              className="btn btn-primary hover:bg-primary text-white"
+            >
+              {" "}
+              SIGN IN
+            </button>
           )}
         </div>
       </div>
