@@ -21,7 +21,6 @@ const Navbar = () => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
-
     // Check if user is authenticated
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setUser(user); // Set the user state
@@ -36,6 +35,12 @@ const Navbar = () => {
     } else {
       navigate("/Login");
     }
+  };
+  const handleLogout = () => {
+    // Keluarkan pengguna dari sesi
+    auth.signOut().then(() => {
+      navigate("/"); // Arahkan ke Halaman Utama setelah keluar
+    });
   };
 
   return (
@@ -72,11 +77,22 @@ const Navbar = () => {
               <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
             </li>
             <li className="font-jakarta font-medium py-1">
-              <li
-                onClick={handleSignInClick}
-              >
-                {user ? "GO TO DASHBOARD" : "SIGN IN"}
-              </li>
+              <div>
+                {user ? (
+                  <li onClick={handleLogout} > SIGN OUT </li>
+                ) : (
+                  <li onClick={handleSignInClick} >  SIGN IN</li>
+                )}
+              </div>
+            </li>
+            <li className="font-jakarta font-medium py-1">
+              <div>
+                {user ? (
+                  <li onClick={handleLogout} > SIGN OUT </li>
+                ) : (
+                  <li onClick={handleSignInClick} >  SIGN IN</li>
+                )}
+              </div>
             </li>
           </ul>
         </div>
@@ -145,12 +161,11 @@ const Navbar = () => {
         </label>
 
         <div className="hidden pe-10 lg:flex justify-end">
-          <button
-            onClick={handleSignInClick}
-            className="btn btn-primary hover:bg-primary text-white"
-          >
-            {user ? "GO TO DASHBOARD" : "SIGN IN"}
-          </button>
+          {user ? (
+            <button onClick={handleLogout} className="btn btn-primary hover:bg-primary text-white" > SIGN OUT </button>
+          ) : (
+            <button onClick={handleSignInClick} className="btn btn-primary hover:bg-primary text-white"> SIGN IN</button>
+          )}
         </div>
       </div>
     </div>

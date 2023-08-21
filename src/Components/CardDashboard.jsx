@@ -38,8 +38,8 @@ const BoxItems = ({ boxes }) => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="w-64 carousel rounded-box relative ms-14 space-x-8">
+    <div className="flex flex-col items-center md:hidden">
+      <div className="carousel w-64 rounded-box gap-x-10 space-x-8">
         {boxes.map((box, index) => (
           <div
             key={index}
@@ -48,7 +48,7 @@ const BoxItems = ({ boxes }) => {
             }`}
           >
             <div className="card bg-primary text-primary-content">
-              <div className="card-body">
+              <div className="card-body w-72">
                 <p className="font-bold text-lg">BOX ID: {box.boxId}</p>
                 <p>UID: {box.uid}</p>
                 {box.timestamps.map((timestamp, idx) => (
@@ -58,16 +58,10 @@ const BoxItems = ({ boxes }) => {
             </div>
           </div>
         ))}
-        <button
-          className="carousel-control prev"
-          onClick={handlePrev}
-        >
+        <button className="carousel-control prev" onClick={handlePrev}>
           &#10094;
         </button>
-        <button
-          className="carousel-control next"
-          onClick={handleNext}
-        >
+        <button className="carousel-control next" onClick={handleNext}>
           &#10095;
         </button>
       </div>
@@ -75,7 +69,7 @@ const BoxItems = ({ boxes }) => {
   );
 };
 
-const HeroDashboard = () => {
+const CardDashboard = () => {
   const boxes = [
     {
       boxId: 2,
@@ -112,32 +106,13 @@ const HeroDashboard = () => {
       navigate("/"); // Navigate to Home after sign out
     });
   };
-  
+
   const navigate = useNavigate();
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col sm:flex-row justify-between items-center bg-base-100 p-4">
-        <div
-          onClick={() => navigate("/")}
-          className="flex items-center space-x-2 sm:justify-center lg:justify-start hover:cursor-pointer"
-        >
-          <img src="/Logo.png" alt="Logo" className="w-26 h-16" />
-          <a className="font-jakarta font-extrabold text-[25px] my-3 text-primary tracking-[.15em]">
-            PROBOX
-          </a>
-        </div>
-        <div className="mt-4 sm:mt-0 sm:ml-auto">
-        <button
-            onClick={handleLogout} // Call handleLogout on sign-out button click
-            className="btn bg-primary hover:bg-primary text-white sm:self-center lg:self-start"
-          >
-            SIGN OUT
-          </button>
-        </div>
-      </div>
       <div className="flex flex-col mt-6 sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
         <div className="w-full flex justify-center">
-          <div className="w-full sm:w-1/2 p-4">
+          <div className="w-full sm:w-9/12 p-4 lg:w-1/2">
             <div className="card bg-primary text-primary-content">
               <div className="card-body flex p-1">
                 <div>
@@ -155,7 +130,7 @@ const HeroDashboard = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row mt-10 items-center justify-center">
+      <div className="flex flex-col mt-4 my-6 sm:flex-row mt-10 my-10 items-center justify-center">
         <h2 className="font-medium text-lg text-center">HISTORY</h2>
       </div>
       <div className="hidden sm:block">
@@ -177,4 +152,4 @@ const HeroDashboard = () => {
   );
 };
 
-export default HeroDashboard;
+export default CardDashboard;

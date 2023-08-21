@@ -20,7 +20,7 @@ export default {
           ...require("daisyui/src/theming/themes")["[data-theme=light]"],
           primary: "#364FA2",
           secondary:"#1F2937",
-          neutral:"#364FA2",
+          neutral:"#364FA2",  
           "primary-focus": "mediumblue",
         },
         dark: {

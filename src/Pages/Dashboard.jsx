@@ -1,10 +1,11 @@
 import React from "react"
-import Navbar from "../Components/Navbar"
-import HeroDashboard from "../Components/HeroDashboard";
+import CardDashboard from "../Components/CardDashboard";
+import Navbar from "../Components/Navbar";
 const Dashboard = ()=>{
     return(
         <div>
-            <HeroDashboard/> 
+            <Navbar/>
+            <CardDashboard/>
         </div>
     )
 }
