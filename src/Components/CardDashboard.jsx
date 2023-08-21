@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const BoxItem = ({ uid, status, timestamp }) => (
   <div className="w-full p-4">
     <div className="card bg-primary text-primary-content relative">
-      {status === "TIDAK ADA BARANG" ? (
-        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-red-500 font-bold">
-          {status}
-        </div>
-      ) : (
-        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-green-500 font-bold">
-          {status}
-        </div>
-      )}
-      <div className="card-body">
-        <p className="font-bold text-lg">UID: {uid}</p>
+      <div className="card-body text-white font-jakarta">
+        {status === "TIDAK ADA BARANG" && (
+          <div className="pt-5 absolute top-2 left-1/2 transform -translate-x-1/2 text-red-500 font-bold">
+            {status}
+          </div>
+        )}
+        <p className="font-bold text-lg pt-10">UID: {uid}</p>
+        {status !== "TIDAK ADA BARANG" && (
+          <p className="pt-5 absolute top-2 left-1/2 transform -translate-x-1/2 text-green-500 font-bold">
+            {status}
+          </p>
+        )}
         <p>Timestamp: {timestamp}</p>
       </div>
     </div>
   </div>
 );
-
-const HistoryItem = ({ uid, status, lock, timestamp }) => (
+const HistoryItem = ({ uid, status, lock, timestamp,id }) => (
   <div className="p-2">
     <div className="card bg-primary text-primary-content relative">
-      <div className="card-body">
+      <div className="card-body  text-white font-jakarta">
+        <p className="font-bold text-lg text-end">{id}</p>
         <p className="font-bold text-lg">UID: {uid}</p>
         <p>Status: {status}</p>
         <p>Lock: {lock}</p>
@@ -41,11 +40,14 @@ const CardDashboard = () => {
   const [history, setHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4; 
+  const totalPages = Math.ceil(history.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
   useEffect(() => {
-    // Fetch data from the first API for current box status
     axios
-      .get("https://probox-eta.vercel.app/api/probox")
+      .get("https://probox-supabase.vercel.app/api/probox")
       .then((response) => {
         setCurrentBox(response.data.data);
         setIsLoading(false);
@@ -57,7 +59,7 @@ const CardDashboard = () => {
 
     // Fetch data from the second API for historical data
     axios
-      .get("https://probox-eta.vercel.app/api/probox/history")
+      .get("https://probox-supabase.vercel.app/api/probox/history")
       .then((response) => {
         setHistory(response.data.data);
       })
@@ -65,15 +67,6 @@ const CardDashboard = () => {
         console.error("Error fetching history:", error);
       });
   }, []);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-  
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,12 +82,14 @@ const CardDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="text-center mt-4 text-lg font-bold">History</div>
+        <div className="text-center mt-4 text-lg font-medium font-jakarta">
+          History
+        </div>
         <div className="flex justify-center mt-2 overflow-x-auto">
-          <div className="grid grid-cols-2 gap-4">
-            {history.reverse().map((item, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {history.slice(startIndex, endIndex).map((item) => (
               <HistoryItem
-                key={index}
+                id={item.id}
                 uid={item.uid}
                 status={item.status}
                 lock={item.lock}
@@ -102,6 +97,23 @@ const CardDashboard = () => {
               />
             ))}
           </div>
+        </div>
+        {/* Pagination controls */}
+        <div className="flex justify-center mt-4">
+          <button
+            className="btn btn-primary mx-2 text-white hover:bg-primary"
+            onClick={() => setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <button
+            className="btn btn-primary mx-2 text-white hover:bg-primary"
+            onClick={() => setCurrentPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
