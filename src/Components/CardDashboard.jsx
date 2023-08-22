@@ -5,22 +5,22 @@ const BoxItem = ({ uid, status, timestamp }) => (
   <div className="">
     <div className="card bg-primary text-primary-content">
       {status === "TIDAK ADA BARANG" ? (
-        <div className="card-body w-full text-white font-jakarta lg:w-72">
-        <div className="hidden md:block absolute top-1/2 right-4 -translate-y-2 text-red-500 font-bold text-md">
+        <div className="card-body w-full text-white font-jakarta">
+        <div className="hidden md:block absolute top-1/2 right-4 -translate-y-2 text-green-500 font-bold text-md">
           {status}
         </div>
-        <div className="flex text-red-500 font-bold text-md md:hidden ">
+        <div className="flex text-green-500 font-bold text-md md:hidden ">
           {status}
         </div>
         <p className="font-bold text-md ">UID: {uid}</p>
         <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
       </div>
       ) : (
-        <div className="card-body w-full text-white font-jakarta lg:w-72">
-          <div className="hidden md:block absolute top-1/2 right-4 -translate-y-2 text-green-500 font-bold text-md">
+        <div className="card-body w-full text-white font-jakarta">
+          <div className="hidden md:block absolute top-1/2 right-4 -translate-y-2 text-red-500 font-bold text-md">
             {status}
           </div>
-          <div className="flex text-green-500 font-bold text-md md:hidden ">
+          <div className="flex text-red-500 font-bold text-md md:hidden ">
             {status}
           </div>
           <p className="font-bold text-md ">UID: {uid}</p>
@@ -33,8 +33,8 @@ const BoxItem = ({ uid, status, timestamp }) => (
 
 const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
   <div className="p-2">
-    <div className="card bg-primary text-primary-content relative">
-      <div className="card-body text-white font-jakarta">
+    <div className="card bg-primary text-primary-content relative ">
+      <div className="card-body text-white font-jakarta ">
         <div className="flex">
           <p className="font-bold text-lg">UID: {uid}</p>
           <p className="font-bold text-lg text-end">{id}</p>
@@ -57,19 +57,16 @@ const CardDashboard = () => {
   const totalPages = Math.ceil(history.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  useEffect(() => {
+  const fetchData = () => {
     axios
       .get("https://probox-supabase.vercel.app/api/probox")
       .then((response) => {
         setCurrentBox(response.data.data);
-        setIsLoading(false);
       })
       .catch((error) => {
         setError(error);
-        setIsLoading(false);
       });
 
-    // Fetch data from the second API for historical data
     axios
       .get("https://probox-supabase.vercel.app/api/probox/history")
       .then((response) => {
@@ -78,14 +75,25 @@ const CardDashboard = () => {
       .catch((error) => {
         console.error("Error fetching history:", error);
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    // Fetch data immediately when the component mounts
+    fetchData();
+
+    // Fetch data every second using setInterval
+    const intervalId = setInterval(fetchData, 1000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-center">
       <div className="mt-6">
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col sm:flex-row ">
           <div className="w-full flex justify-center">
-            <div className=" sm:w-9/12 p-2 lg:w-1/2">
+            <div className="w-full p-2 sm:w-10/12 lg:w-9/12">
               <BoxItem
                 uid={currentBox.uid}
                 status={currentBox.status}
@@ -101,6 +109,7 @@ const CardDashboard = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {history.slice(startIndex, endIndex).map((item) => (
               <HistoryItem
+                key={item.id}
                 id={item.id}
                 uid={item.uid}
                 status={item.status}
@@ -132,4 +141,4 @@ const CardDashboard = () => {
   );
 };
 
-export default CardDashboard;
+export default CardDashboard;

@@ -28,7 +28,6 @@ const FormLogin = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        console.log(user);
         navigate("/Dashboard"); // Navigate to Dashboard on successful sign in
       })
       .catch((err) => {
@@ -37,8 +36,17 @@ const FormLogin = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="card w-86 bg-base-100 shadow-xl lg:w-96 my-60">
+    <div className="flex flex-col items-center py-32 md:py-52 ">
+      <div
+        onClick={() => navigate("/")}
+        className="flex flex-wrap justify-center items-center hover:cursor-pointer transform hover:scale-105"
+      >
+        <img src="/Logo.png" alt="Logo" className="w-26 h-16" />
+        <a className="font-jakarta font-extrabold text-[25px] my-3 text-primary tracking-[.15em]">
+          PROBOX
+        </a>
+      </div>
+      <div className="card w-86 bg-base-100 shadow-xl lg:w-96 my-4">
         <div className="card-body items-center text-center">
           <h2 className="card-title font-jakarta font-bold text-[30px]">
             Sign in to your
@@ -51,7 +59,7 @@ const FormLogin = () => {
             {user ? (
               null // No sign-out button when user is signed in
             ) : (
-              <button onClick={handleGoogleSignIn} className="btn bg-base-200">
+              <button onClick={handleGoogleSignIn} className="btn bg-base-200 hover:cursor-pointer transform hover:scale-105">
                 <img src="/google.png" alt="" className="w-5 h-5" />
                 Sign in with Google
               </button>

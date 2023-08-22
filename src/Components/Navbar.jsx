@@ -121,7 +121,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-        <label className="swap swap-rotate sm:pe-8">
+        <label className="swap swap-rotate hover:cursor-pointer transform hover:scale-110 sm:pe-8">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
