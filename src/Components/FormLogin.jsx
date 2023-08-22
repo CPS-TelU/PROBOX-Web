@@ -28,6 +28,7 @@ const FormLogin = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        console.log(user);
         navigate("/Dashboard"); // Navigate to Dashboard on successful sign in
       })
       .catch((err) => {
@@ -36,17 +37,8 @@ const FormLogin = () => {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen">
-      <div
-        onClick={() => navigate("/")}
-        className="flex flex-wrap justify-center lg:py-28 hover:cursor-pointer"
-      >
-        <img src="/Logo.png" alt="Logo" className="w-26 h-16" />
-        <a className="font-jakarta font-extrabold text-[25px] my-3 text-primary tracking-[.15em]">
-          PROBOX
-        </a>
-      </div>
-      <div className="card w-86 bg-base-100 shadow-xl lg:w-96 my-4">
+    <div className="flex flex-col items-center">
+      <div className="card w-86 bg-base-100 shadow-xl lg:w-96 my-60">
         <div className="card-body items-center text-center">
           <h2 className="card-title font-jakarta font-bold text-[30px]">
             Sign in to your
