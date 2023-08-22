@@ -10,7 +10,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Hazman.jpg"
+                    src="./Hazman.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -26,7 +26,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Ghina.jpg"
+                    src="./Ghina.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -42,7 +42,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Aul.jpg"
+                    src="./Aul.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -65,7 +65,7 @@ import React from "react";
                 <div className="card bg-base-100 ">
                   <figure>
                     <img
-                      src="\src\assets\Hazman.jpg"
+                      src="./Hazman.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -83,7 +83,7 @@ import React from "react";
                 <div className="card bg-base-100">
                   <figure>
                     <img
-                      src="\src\assets\Ghina.jpg"
+                      src="./Ghina.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -101,7 +101,7 @@ import React from "react";
                 <div className="card bg-base-100">
                   <figure>
                     <img
-                      src="\src\assets\Aul.jpg"
+                      src="./Aul.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -126,7 +126,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Adam.jpg"
+                    src="./Adam.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -142,7 +142,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Hari.jpg"
+                    src="./Hari.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -158,7 +158,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Hoka.jpg"
+                    src="./Hoka.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -181,7 +181,7 @@ import React from "react";
                 <div className="card bg-base-100 ">
                   <figure>
                     <img
-                      src="\src\assets\Adam.jpg"
+                      src="./Adam.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -199,7 +199,7 @@ import React from "react";
                 <div className="card bg-base-100">
                   <figure>
                     <img
-                      src="\src\assets\Hari.jpg"
+                      src="./Hari.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -217,7 +217,7 @@ import React from "react";
                 <div className="card bg-base-100">
                   <figure>
                     <img
-                      src="\src\assets\Hoka.jpg"
+                      src="./Hoka.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -244,7 +244,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Fatih.jpg"
+                    src="./Fatih.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -260,7 +260,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Raihan.jpg"
+                    src="./Raihan.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -276,7 +276,7 @@ import React from "react";
               <div className="card bg-base-100 shadow-2xl hover:transition-transform transform scale-100 hover:scale-105 cursor-pointer">
                 <figure>
                   <img
-                    src="\src\assets\Rifki.jpg"
+                    src="./Rifki.jpg"
                     alt="Person"
                     className="rounded-3xl w-52"
                   />
@@ -299,7 +299,7 @@ import React from "react";
                 <div className="card bg-base-100 ">
                   <figure>
                     <img
-                      src="\src\assets\Fatih.jpg"
+                      src="./Fatih.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -317,7 +317,7 @@ import React from "react";
                 <div className="card bg-base-100">
                   <figure>
                     <img
-                      src="\src\assets\Raihan.jpg"
+                      src="./Raihan.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />
@@ -335,7 +335,7 @@ import React from "react";
                 <div className="card bg-base-100">
                   <figure>
                     <img
-                      src="\src\assets\Rifki.jpg"
+                      src="./Rifki.jpg"
                       alt="Person"
                       className="rounded-3xl w-52 md:w-11/12"
                     />

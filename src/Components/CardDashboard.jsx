@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const BoxItem = ({ uid, status, timestamp }) => (
+const BoxItem = ({ uid, status, timestamp, lock }) => (
   <div className="">
     <div className="card bg-primary text-primary-content">
       {status === "TIDAK ADA BARANG" ? (
@@ -13,6 +13,7 @@ const BoxItem = ({ uid, status, timestamp }) => (
           {status}
         </div>
         <p className="font-bold text-md ">UID: {uid}</p>
+        <p className="font-bold text-md ">Selenoid : {lock}</p>
         <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
       </div>
       ) : (
@@ -24,6 +25,7 @@ const BoxItem = ({ uid, status, timestamp }) => (
             {status}
           </div>
           <p className="font-bold text-md ">UID: {uid}</p>
+          <p className="font-bold text-md ">Selenoid : {lock}</p>
           <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
         </div>
       )}
@@ -40,7 +42,7 @@ const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
           <p className="font-bold text-lg text-end">{id}</p>
         </div>
         <p>Status : {status}</p>
-        <p>Lock : {lock}</p>
+        <p>Selenoid : {lock}</p>
         <p>Timestamp  : {timestamp}</p>
       </div>
     </div>
@@ -50,8 +52,6 @@ const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
 const CardDashboard = () => {
   const [currentBox, setCurrentBox] = useState({});
   const [history, setHistory] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
   const totalPages = Math.ceil(history.length / itemsPerPage);
@@ -86,7 +86,7 @@ const CardDashboard = () => {
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, []);
+  }, []);
 
   return (
     <div className="flex justify-center">
@@ -97,6 +97,7 @@ const CardDashboard = () => {
               <BoxItem
                 uid={currentBox.uid}
                 status={currentBox.status}
+                lock={currentBox.lock}
                 timestamp={currentBox.timestamp}
               />
             </div>
