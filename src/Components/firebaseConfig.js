@@ -9,7 +9,7 @@ const firebaseConfig = {
   messagingSenderId: "585652928316",
   appId: "1:585652928316:web:8c5093456fc853a5d6e839",
   measurementId: "G-11F0H13WVH"
-};
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -19,4 +19,5 @@ const provider = new GoogleAuthProvider();
 // Enable persistence
 setPersistence(auth, browserLocalPersistence);
 
-export { auth, provider };
+
+export { auth, provider};
