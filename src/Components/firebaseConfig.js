@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAtl_9_flWOaPoxKwNX8ZjsBCP6KLkhaDA",
-  authDomain: "pro-box-fac33.firebaseapp.com",
-  projectId: "pro-box-fac33",
-  storageBucket: "pro-box-fac33.appspot.com",
-  messagingSenderId: "585652928316",
-  appId: "1:585652928316:web:8c5093456fc853a5d6e839",
-  measurementId: "G-11F0H13WVH"
-  };
+  apiKey: "AIzaSyBnFyTb2MLhEUE6-_1vHMJLuPINkH-OO8Q",
+  authDomain: "auth-probox.firebaseapp.com",
+  projectId: "auth-probox",
+  storageBucket: "auth-probox.appspot.com",
+  messagingSenderId: "106232831843",
+  appId: "1:106232831843:web:ed2145a6dd41e05022fd56",
+  measurementId: "G-XL79GX5RGR"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
