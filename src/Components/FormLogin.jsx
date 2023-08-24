@@ -28,6 +28,7 @@ const FormLogin = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        console.log(user);
         navigate("/Dashboard"); // Navigate to Dashboard on successful sign in
       })
       .catch((err) => {

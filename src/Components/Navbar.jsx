@@ -86,9 +86,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex flex-wrap ">
-          <div className="hidden lg:flex flex-row mx-10">
+          <div onClick={() => navigate("/")} className="hidden lg:flex flex-row mx-10 hover:cursor-pointer">
             <img src="/Logo.png" alt="Logo" className="w-26 h-16 " />
-            <a className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
+            <a   className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
               PROBOX
             </a>
           </div>

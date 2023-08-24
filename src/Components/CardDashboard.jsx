@@ -6,16 +6,16 @@ const BoxItem = ({ uid, status, timestamp, lock }) => (
     <div className="card bg-primary text-primary-content">
       {status === "TIDAK ADA BARANG" ? (
         <div className="card-body w-full text-white font-jakarta">
-        <div className="hidden md:block absolute top-1/2 right-4 -translate-y-2 text-green-500 font-bold text-md">
-          {status}
+          <div className="hidden md:block absolute top-1/2 right-4 -translate-y-2 text-green-500 font-bold text-md">
+            {status}
+          </div>
+          <div className="flex text-green-500 font-bold text-md md:hidden ">
+            {status}
+          </div>
+          <p className="font-bold text-md ">UID: {uid}</p>
+          <p className="font-bold text-md ">Selenoid : {lock}</p>
+          <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
         </div>
-        <div className="flex text-green-500 font-bold text-md md:hidden ">
-          {status}
-        </div>
-        <p className="font-bold text-md ">UID: {uid}</p>
-        <p className="font-bold text-md ">Selenoid : {lock}</p>
-        <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
-      </div>
       ) : (
         <div className="card-body w-full text-white font-jakarta">
           <div className="hidden md:block absolute top-1/2 right-4 -translate-y-2 text-red-500 font-bold text-md">
@@ -35,17 +35,35 @@ const BoxItem = ({ uid, status, timestamp, lock }) => (
 
 const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
   <div className="p-2">
+     {status === "TIDAK ADA BARANG" ? (
     <div className="card bg-primary text-primary-content relative ">
       <div className="card-body text-white font-jakarta ">
         <div className="flex">
           <p className="font-bold text-lg">UID: {uid}</p>
           <p className="font-bold text-lg text-end">{id}</p>
         </div>
-        <p>Status : {status}</p>
+        <div>
+        <p className="text-green-500 font-bold text-md font-jakarta">{status}</p>
         <p>Selenoid : {lock}</p>
-        <p>Timestamp  : {timestamp}</p>
+        <p>Timestamp : {timestamp}</p>
+        </div>
+        </div>
+        </div>
+        ) : (
+    <div className="card bg-primary text-primary-content relative ">
+      <div className="card-body text-white font-jakarta ">
+        <div className="flex">
+          <p className="font-bold text-lg">UID: {uid}</p>
+          <p className="font-bold text-lg text-end">{id}</p>
+        </div>
+        <div>
+        <p  className="text-red-500 font-bold text-md font-jakarta">{status}</p>
+        <p>Selenoid : {lock}</p>
+        <p>Timestamp : {timestamp}</p>
+        </div>
       </div>
     </div>
+    )}
   </div>
 );
 
@@ -86,7 +104,12 @@ const CardDashboard = () => {
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, []);
+  }, []);
+
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
 
   return (
     <div className="flex justify-center">
@@ -97,7 +120,7 @@ const CardDashboard = () => {
               <BoxItem
                 uid={currentBox.uid}
                 status={currentBox.status}
-                lock={currentBox.lock}
+                lock={currentBox.selenoid}
                 timestamp={currentBox.timestamp}
               />
             </div>
@@ -114,24 +137,69 @@ const CardDashboard = () => {
                 id={item.id}
                 uid={item.uid}
                 status={item.status}
-                lock={item.lock}
+                lock={item.selenoid}
                 timestamp={item.timestamp}
               />
             ))}
           </div>
         </div>
         {/* Pagination controls */}
-        <div className="flex justify-center mt-4">
+        <div className="flex w-full justify-center mt-4 mb-10">
           <button
-            className="btn btn-primary mx-2 text-white hover:bg-primary"
-            onClick={() => setCurrentPage(currentPage - 1)}
+            className="btn btn-primary btn-sm w-1 mx-1 text-white hover:bg-primary sm:btn-md  lg:btn-md"
+            onClick={() => setCurrentPage(1)}
             disabled={currentPage === 1}
           >
             ❮❮
           </button>
           <button
-            className="btn btn-primary mx-2 text-white hover:bg-primary"
+            className="btn btn-primary btn-sm w-1 mx-1 text-white hover:bg-primary sm:btn-md  lg:btn-md"
+            onClick={() => setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            ❮
+          </button>
+          {currentPage > 2 && (
+            <>
+              <span className="mx-1 translate-y-3 md:translate-y-7 lg:translate-y-2">
+                . . .
+              </span>
+            </>
+          )}
+          {pageNumbers.map(
+            (pageNumber) =>
+              pageNumber >= currentPage - 1 &&
+              pageNumber <= currentPage + 1 && (
+                <button
+                  key={pageNumber}
+                  className={`btn btn-sm mx-1 sm:btn-md lg:btn-md ${
+                    pageNumber === currentPage
+                      ? "btn-primary btn-sm text-white sm:btn-md  lg:btn-md"
+                      : "text-primary"
+                  } hover:bg-primary`}
+                  onClick={() => setCurrentPage(pageNumber)}
+                >
+                  {pageNumber}
+                </button>
+              )
+          )}
+          {currentPage < totalPages - 1 && (
+            <>
+              <span className="mx-1 translate-y-3 md:translate-y-7 lg:translate-y-2">
+                . . .
+              </span>
+            </>
+          )}
+          <button
+            className="btn btn-primary btn-sm w-1 mx-1 text-white hover:bg-primary sm:btn-md  lg:btn-md"
             onClick={() => setCurrentPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            ❯
+          </button>
+          <button
+            className="btn btn-primary btn-sm w-1 mx-1 text-white hover:bg-primary sm:btn-md  lg:btn-md"
+            onClick={() => setCurrentPage(8)}
             disabled={currentPage === totalPages}
           >
             ❯❯
@@ -142,4 +210,4 @@ const CardDashboard = () => {
   );
 };
 
-export default CardDashboard;
+export default CardDashboard;
