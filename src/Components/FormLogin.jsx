@@ -39,41 +39,41 @@ const FormLogin = () => {
       });
   };
 
-  const supabase = createClient(
-    "https://pbzaiztldlpympnwfpuz.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBiemFpenRsZGxweW1wbndmcHV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTI3NjA1MTMsImV4cCI6MjAwODMzNjUxM30.tHDSYLyJkULk52TB8hM9rc6xYCse2xfu39RlgQjCIK0"
-  );
+  // const supabase = createClient(
+  //   "https://pbzaiztldlpympnwfpuz.supabase.co",
+  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBiemFpenRsZGxweW1wbndmcHV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTI3NjA1MTMsImV4cCI6MjAwODMzNjUxM30.tHDSYLyJkULk52TB8hM9rc6xYCse2xfu39RlgQjCIK0"
+  // );
 
-  async function insertUser(useremail) {
-    try {
-      const { error } = await supabase
-        .from("users")
-        .upsert([{ email: useremail }]);
+  // async function insertUser(useremail) {
+  //   try {
+  //     const { error } = await supabase
+  //       .from("users")
+  //       .upsert([{ email: useremail }]);
 
-      if (error) {
-        throw error;
-      }
+  //     if (error) {
+  //       throw error;
+  //     }
 
-      console.log("User data inserted");
-    } catch (error) {
-      console.error("Error inserting user data:", error.message);
-    }
-  }
-  const sendData = (Useremail) => {
-      const requestBody = {
-        userEmail: Useremail
-      };
+  //     console.log("User data inserted");
+  //   } catch (error) {
+  //     console.error("Error inserting user data:", error.message);
+  //   }
+  // }
+  // const sendData = (Useremail) => {
+  //     const requestBody = {
+  //       userEmail: Useremail
+  //     };
   
-      axios
-        .post("https://attractive-lime-tie.cyclic.cloud/api/login", requestBody)
-        .then((response) => {
-          console.log("Data sent successfully:", response.data);
-          console.log(response.data.token);
-        })
-        .catch((error) => {
-          console.error("Error sending data:", error);
-        });
-  };
+  //     axios
+  //       .post("https://attractive-lime-tie.cyclic.cloud/api/login", requestBody)
+  //       .then((response) => {
+  //         console.log("Data sent successfully:", response.data);
+  //         console.log(response.data.token);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error sending data:", error);
+  //       });
+  // };
   
 
   // Call the function to insert the user into the 'users' table
