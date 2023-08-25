@@ -36,7 +36,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12  "
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/hazman-wirayudha"
@@ -44,7 +47,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                     <a
                       href="https://github.com/hazmanwryd"
@@ -52,7 +58,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                   </div>
                 </div>
@@ -80,7 +89,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/ghn-mf-1707ghn/"
@@ -88,7 +100,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                     <a
                       href="https://github.com/ghinamf"
@@ -96,7 +111,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                   </div>
                 </div>
@@ -124,7 +142,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/"
@@ -132,7 +153,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                     <a
                       href="https://github.com/awlllll/"
@@ -140,7 +164,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                      />
                     </a>
                   </div>
                 </div>
@@ -177,7 +204,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -188,7 +215,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -197,7 +224,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                        />
                       </a>
                     </div>
                   </div>
@@ -228,7 +258,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -239,7 +269,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -248,7 +278,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                        />
                       </a>
                     </div>
                   </div>
@@ -280,7 +313,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -290,7 +323,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -299,7 +332,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                        />
                       </a>
                     </div>
                   </div>
@@ -338,7 +374,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/adamwisnup/"
@@ -346,7 +385,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://github.com/adamwisnup"
@@ -354,7 +396,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                   </div>
                 </div>
@@ -382,7 +427,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/hskndr/"
@@ -390,7 +438,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://github.com/hiskandaryps/"
@@ -398,7 +449,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                   </div>
                 </div>
@@ -426,7 +480,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/hoka-cristian-7620851b0/"
@@ -434,7 +491,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://github.com/hokacristian"
@@ -442,7 +502,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                   </div>
                 </div>
@@ -479,7 +542,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -490,7 +553,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -499,7 +562,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                        />
                       </a>
                     </div>
                   </div>
@@ -531,7 +597,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -542,7 +608,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -551,7 +617,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                        />
                       </a>
                     </div>
                   </div>
@@ -583,7 +652,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -594,7 +663,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -603,7 +672,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                        />
                       </a>
                     </div>
                   </div>
@@ -635,14 +707,17 @@ const HeroOurTeam = () => {
                 </h2>
                 <p>S1 Teknik Telekomunikasi</p>
                 <div className="text-center">
-                  <div className="inline-block">
+                  <div className="inline-block pt-4">
                     <a
                       href="https://www.instagram.com/muhardianf/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/muhardian-fathih-b60a68288/"
@@ -650,7 +725,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://github.com/muhardiann"
@@ -658,7 +736,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                   </div>
                 </div>
@@ -679,14 +760,17 @@ const HeroOurTeam = () => {
                 </h2>
                 <p>S1 Teknik Telekomunikasi</p>
                 <div className="text-center">
-                  <div className="inline-block">
+                  <div className="inline-block pt-4">
                     <a
                       href="https://www.instagram.com/rai.drmwn/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/raihanputrad/"
@@ -694,7 +778,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://github.com/Hanntuu"
@@ -702,7 +789,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                   </div>
                 </div>
@@ -723,14 +813,17 @@ const HeroOurTeam = () => {
                 </h2>
                 <p>S1 Teknik Telekomunikasi</p>
                 <div className="text-center">
-                  <div className="inline-block">
+                  <div className="inline-block pt-4">
                     <a
                       href="https://www.instagram.com/kuuhaku_riro/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-ig inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://id.linkedin.com/in/rifki-rosada-a8569125a"
@@ -738,7 +831,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-linkedin inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                     <a
                       href="https://github.com/froxyroar"
@@ -746,7 +842,10 @@ const HeroOurTeam = () => {
                       rel="noopener noreferrer"
                       className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
+                      />
                     </a>
                   </div>
                 </div>
@@ -774,7 +873,7 @@ const HeroOurTeam = () => {
                   </h2>
                   <p className="md:text-2xl">S1 Teknik Telekomunikasi</p>
                   <div className="text-center">
-                    <div className="inline-block">
+                    <div className="inline-block pt-4">
                       <a
                         href="https://www.instagram.com/muhardianf/"
                         target="_blank"
@@ -783,7 +882,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -794,7 +893,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12 "
                         />
                       </a>
                       <a
@@ -803,7 +902,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                        />
                       </a>
                     </div>
                   </div>
@@ -826,7 +928,7 @@ const HeroOurTeam = () => {
                   </h2>
                   <p className="md:text-2xl">S1 Teknik Telekomunikasi</p>
                   <div className="text-center">
-                    <div className="inline-block">
+                    <div className="inline-block pt-4">
                       <a
                         href="https://www.instagram.com/rai.drmwn/"
                         target="_blank"
@@ -835,7 +937,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -846,7 +948,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -855,7 +957,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                        />
                       </a>
                     </div>
                   </div>
@@ -878,7 +983,7 @@ const HeroOurTeam = () => {
                   </h2>
                   <p className="md:text-2xl">S1 Teknik Telekomunikasi</p>
                   <div className="text-center">
-                    <div className="inline-block">
+                    <div className="inline-block pt-4">
                       <a
                         href="https://www.instagram.com/kuuhaku_riro/"
                         target="_blank"
@@ -887,7 +992,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faInstagram}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -898,7 +1003,7 @@ const HeroOurTeam = () => {
                       >
                         <FontAwesomeIcon
                           icon={faLinkedin}
-                          className="w-6 h-6"
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
                         />
                       </a>
                       <a
@@ -907,7 +1012,10 @@ const HeroOurTeam = () => {
                         rel="noopener noreferrer"
                         className="text-github inline-block mx-2 transition-transform transform hover:scale-110"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="w-7 px-2 md:w-12 h-12 lg:w-7/12"
+                        />
                       </a>
                     </div>
                   </div>
