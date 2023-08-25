@@ -12,7 +12,7 @@ const BoxItem = ({ uid, status, timestamp, lock }) => (
           <div className="flex text-green-500 font-bold text-md md:hidden ">
             {status}
           </div>
-          <p className="font-bold text-md ">UID: {uid}</p>
+          <p className="font-bold text-md ">User: {uid}</p>
           <p className="font-bold text-md ">Selenoid : {lock}</p>
           <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
         </div>
@@ -24,7 +24,7 @@ const BoxItem = ({ uid, status, timestamp, lock }) => (
           <div className="flex text-red-500 font-bold text-md md:hidden ">
             {status}
           </div>
-          <p className="font-bold text-md ">UID: {uid}</p>
+          <p className="font-bold text-md ">User: {uid}</p>
           <p className="font-bold text-md ">Selenoid : {lock}</p>
           <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
         </div>
@@ -39,7 +39,7 @@ const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
     <div className="card bg-primary text-primary-content relative ">
       <div className="card-body text-white font-jakarta ">
         <div className="flex">
-          <p className="font-bold text-lg">UID: {uid}</p>
+          <p className="font-bold text-lg">User: {uid}</p>
           <p className="font-bold text-lg text-end">{id}</p>
         </div>
         <div>
@@ -53,7 +53,7 @@ const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
     <div className="card bg-primary text-primary-content relative ">
       <div className="card-body text-white font-jakarta ">
         <div className="flex">
-          <p className="font-bold text-lg">UID: {uid}</p>
+          <p className="font-bold text-lg">User: {uid}</p>
           <p className="font-bold text-lg text-end">{id}</p>
         </div>
         <div>
@@ -75,6 +75,7 @@ const CardDashboard = () => {
   const totalPages = Math.ceil(history.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
+
   const fetchData = () => {
     axios
       .get("https://probox-supabase.vercel.app/api/probox")
@@ -199,7 +200,7 @@ const CardDashboard = () => {
           </button>
           <button
             className="btn btn-primary btn-sm w-1 mx-1 text-white hover:bg-primary sm:btn-md  lg:btn-md"
-            onClick={() => setCurrentPage(8)}
+            onClick={() => setCurrentPage(totalPages)}
             disabled={currentPage === totalPages}
           >
             ❯❯
@@ -210,4 +211,4 @@ const CardDashboard = () => {
   );
 };
 
-export default CardDashboard;
+export default CardDashboard;

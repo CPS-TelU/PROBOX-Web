@@ -23,7 +23,7 @@ const HeroMain = () => {
   };
 
   return (
-    <div className="hero my-2 lg:my-20 bg-base-100">
+    <div className="hero my-2 lg:my-32 bg-base-100">
       <div className="hero-content flex-col gap-1 lg:flex-row">
         <div className="max-w-sm md:max-w-lg rounded-lg lg:max-w-xl">
           <img

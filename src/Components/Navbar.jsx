@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "./firebaseConfig"; // Make sure to import the auth object
+import { createClient } from '@supabase/supabase-js';
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -63,32 +65,68 @@ const Navbar = () => {
               />
             </svg>
           </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
-          >
-            <li className="font-jakarta font-medium py-1 ">
-              <NavLink to={"/"}>HOME</NavLink>
-            </li>
-            <li className="font-jakarta font-medium py-1">
-              <NavLink to={"/Features"}>FEATURES</NavLink>
-            </li>
-            <li className="font-jakarta font-medium py-1">
-              <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
-            </li>
-            <li className="font-jakarta font-medium py-1">
-              {user ? (
-                <p onClick={handleLogout}> SIGN OUT </p>
-              ) : (
-                <p onClick={handleSignInClick}> SIGN IN</p>
-              )}
-            </li>
-          </ul>
+          {user ? (
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+            >
+              <li>
+                <div className="hover:bg-white">
+                  <p className="me-4 font-jakarta font-medium text-[13.5px] ">
+                    {user.displayName}
+                  </p>
+                </div>
+              </li>
+              <li className="font-jakarta font-medium py-1 ">
+                <NavLink to={"/"}>HOME</NavLink>
+              </li>
+              <li className="font-jakarta font-medium py-1">
+                <NavLink to={"/Features"}>FEATURES</NavLink>
+              </li>
+              <li className="font-jakarta font-medium py-1">
+                <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
+              </li>
+              <li className="font-jakarta font-medium py-1">
+                {user ? (
+                  <p onClick={handleLogout}> SIGN OUT </p>
+                ) : (
+                  <p onClick={handleSignInClick}> SIGN IN</p>
+                )}
+              </li>
+            </ul>
+          ) : (
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+            >
+              <li className="font-jakarta font-medium py-1 ">
+                <NavLink to={"/"}>HOME</NavLink>
+              </li>
+              <li className="font-jakarta font-medium py-1">
+                <NavLink to={"/Features"}>FEATURES</NavLink>
+              </li>
+              <li className="font-jakarta font-medium py-1">
+                <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
+              </li>
+              <li className="font-jakarta font-medium py-1">
+                {user ? (
+                  <div>
+                    <p onClick={handleLogout}> SIGN OUT </p>
+                  </div>
+                ) : (
+                  <p onClick={handleSignInClick}> SIGN IN</p>
+                )}
+              </li>
+            </ul>
+          )}
         </div>
         <div className="flex flex-wrap ">
-          <div onClick={() => navigate("/")} className="hidden lg:flex flex-row mx-10 hover:cursor-pointer">
+          <div
+            onClick={() => navigate("/")}
+            className="hidden lg:flex flex-row mx-10 hover:cursor-pointer"
+          >
             <img src="/Logo.png" alt="Logo" className="w-26 h-16 " />
-            <a   className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
+            <a className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
               PROBOX
             </a>
           </div>
@@ -148,23 +186,25 @@ const Navbar = () => {
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-
         <div className="hidden pe-10 lg:flex justify-end">
           {user ? (
-            <button
-              onClick={handleLogout}
-              className="btn btn-primary hover:bg-primary text-white"
-            >
-              {" "}
-              SIGN OUT{" "}
-            </button>
+            <div className="flex items-center">
+              <p className="me-9   font-jakarta font-medium">
+                {user.displayName}
+              </p>
+              <button
+                onClick={handleLogout}
+                className="btn btn-primary hover:bg-primary text-white"
+              >
+                Sign Out
+              </button>
+            </div>
           ) : (
             <button
               onClick={handleSignInClick}
               className="btn btn-primary hover:bg-primary text-white"
             >
-              {" "}
-              SIGN IN
+              Sign In
             </button>
           )}
         </div>
