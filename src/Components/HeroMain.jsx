@@ -47,4 +47,4 @@ const HeroMain = () => {
   );
 };
 
-export default HeroMain;
+export default HeroMain;
