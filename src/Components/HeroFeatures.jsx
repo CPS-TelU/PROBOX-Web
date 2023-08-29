@@ -1,9 +1,9 @@
 import React from "react";
 const HeroFeatures = () => {
   return (
-    <div className="hero my-5 lg:my-20 bg-base-100 ">
-      <div className="hero-content flex-col gap-40 lg:flex-row-reverse align-right lg:gap-24">
-        <img src="/boxtes2.png" className=" w-9/12 md:w-11/12 lg:w-7/12 " />
+    <div className="hero my-2 lg:my-20 bg-base-100 ">
+      <div className="hero-content flex-col gap-20 lg:flex-row-reverse align-right lg:gap-24">
+        <img src="/fix.png" className=" w-9/12 md:w-11/12 lg:w-7/12 " />
         <div>
           <div>
             <div className="flex flex-wrap drop-shadow-2xl">
@@ -43,7 +43,7 @@ const HeroFeatures = () => {
                 Put the items you want to store inside
               </li>
               <li className="font-jakarta text-sm py-1 font-medium md:text-lg">
-                Close the box and it will automatically locked.
+                Close the box and tap to lock the box.
               </li>
             </div>
           </div>
