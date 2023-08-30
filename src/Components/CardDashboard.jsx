@@ -13,7 +13,7 @@ const BoxItem = ({ uid, status, timestamp, lock }) => (
             {status}
           </div>
           <p className="font-bold text-md ">User: {uid}</p>
-          <p className="font-bold text-md ">Selenoid : {lock}</p>
+          <p className="font-bold text-md ">Solenoid : {lock}</p>
           <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
         </div>
       ) : (
@@ -25,7 +25,7 @@ const BoxItem = ({ uid, status, timestamp, lock }) => (
             {status}
           </div>
           <p className="font-bold text-md ">User: {uid}</p>
-          <p className="font-bold text-md ">Selenoid : {lock}</p>
+          <p className="font-bold text-md ">Solenoid : {lock}</p>
           <p className="text-md md:text-lg ">Timestamp: {timestamp}</p>
         </div>
       )}
@@ -46,7 +46,7 @@ const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
             <p className="text-green-500 font-bold text-md font-jakarta">
               {status}
             </p>
-            <p>Selenoid : {lock}</p>
+            <p>Solenoid : {lock}</p>
             <p>Timestamp : {timestamp}</p>
           </div>
         </div>
@@ -62,7 +62,7 @@ const HistoryItem = ({ uid, status, lock, timestamp, id }) => (
             <p className="text-red-500 font-bold text-md font-jakarta">
               {status}
             </p>
-            <p>Selenoid : {lock}</p>
+            <p>Solenoid : {lock}</p>
             <p>Timestamp : {timestamp}</p>
           </div>
         </div>
