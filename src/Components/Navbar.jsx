@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "./firebaseConfig"; // Make sure to import the auth object
-import { createClient } from '@supabase/supabase-js';
-
+import { createClient } from "@supabase/supabase-js";
 
 const Navbar = () => {
+  const [clickCount, setClickCount] = useState(0);
   const navigate = useNavigate();
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -49,7 +49,11 @@ const Navbar = () => {
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="navbar-start sm: flex flex-row">
         <div className="dropdown ">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label
+            tabIndex={0}
+            className="btn btn-ghost lg:hidden"
+            onClick={() => setClickCount(clickCount + 1)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -68,13 +72,18 @@ const Navbar = () => {
           {user ? (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ${
+                clickCount % 2 === 1 ? "block" : "hidden"
+              }`}
             >
               <li>
                 <div className="hover:bg-white">
-                  <p className="me-4 font-jakarta font-medium text-[13.5px] ">
+                  <NavLink
+                    to={"/Dashboard"}
+                    className="me-4 font-jakarta font-medium text-[13.5px]"
+                  >
                     {user.displayName}
-                  </p>
+                  </NavLink>
                 </div>
               </li>
               <li className="font-jakarta font-medium py-1 ">
@@ -97,7 +106,9 @@ const Navbar = () => {
           ) : (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ${
+                clickCount % 2 === 1 ? "block" : "hidden"
+              }`}
             >
               <li className="font-jakarta font-medium py-1 ">
                 <NavLink to={"/"}>HOME</NavLink>
@@ -189,9 +200,12 @@ const Navbar = () => {
         <div className="hidden pe-10 lg:flex justify-end">
           {user ? (
             <div className="flex items-center">
-              <p className="me-9   font-jakarta font-medium">
+              <NavLink
+                to={"/Dashboard"}
+                className="me-9   font-jakarta font-medium"
+              >
                 {user.displayName}
-              </p>
+              </NavLink>
               <button
                 onClick={handleLogout}
                 className="btn btn-primary hover:bg-primary text-white"
@@ -212,4 +226,4 @@ const Navbar = () => {
     </div>
   );
 };
-export default Navbar;
+export default Navbar;
