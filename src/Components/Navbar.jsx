@@ -147,21 +147,18 @@ const Navbar = () => {
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal">
             <li className="font-jakarta font-medium px-2">
-              {/* <a onClick ={() => navigate ("/")}>HOME</a> */}
               <NavLink to={"/"}>HOME</NavLink>
             </li>
             <li className="font-jakarta font-medium px-2">
-              {/* <a onClick={() => navigate("/Features")}>FEATURES</a> */}
               <NavLink to={"/Features"}>FEATURES</NavLink>
             </li>
             <li className="font-jakarta font-medium px-2">
-              {/* <a onClick={() => navigate("/OurTeams")}>OUR TEAMS</a> */}
               <NavLink to={"/OurTeams"}>OUR TEAMS</NavLink>
             </li>
           </ul>
         </div>
         <div className="flex flex-nowrap">
-          <div className="flex items-center lg:hidden">
+          <div onClick={() => navigate("/")} className="flex items-center lg:hidden">
             <img src="/Logo.png" alt="Logo" className="w-26 h-16 " />
             <a className=" font-jakarta font-extrabold text-[20px] my-4 text-primary tracking-[.15em] ">
               PROBOX
