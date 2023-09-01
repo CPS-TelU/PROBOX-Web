@@ -1,7 +1,7 @@
 import React from "react";
 const HeroFeatures = () => {
   return (
-    <div className="hero my-2 lg:my-20 bg-base-100 ">
+    <div className="hero my-2 lg:my-12 bg-base-100 ">
       <div className="hero-content flex-col gap-20 lg:flex-row-reverse align-right lg:gap-24">
         <img src="/fix.png" className=" w-9/12 md:w-11/12 lg:w-7/12 " />
         <div>
